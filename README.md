@@ -58,5 +58,33 @@ This repository is for your Data Structures & Algorithms (DSA) preparation follo
 python3 arrays/leetcode_1_two_sum.py
 ```
 
+## Running Java via VS Code Task
+This workspace includes a VS Code task at `.vscode/tasks.json` that compiles and runs a Java file while redirecting standard input from `input.txt` and standard output to `output.txt`.
+
+- To use the task in VS Code: open the Command Palette → `Run Task...` → select `Compile and run Java`.
+- The task copies the current file to `TempJavaProgram.java`, compiles and runs it, feeding input from `input.txt` and saving output to `output.txt`.
+
+If you prefer running manually from the terminal, use (example):
+```bash
+# Compile
+javac MyProgram.java
+# Run using input.txt and save output
+java MyProgram < input.txt > output.txt
+```
+
+Note about `package` declarations
+- If your Java file uses a `package` declaration, don't remove it; instead compile and run from the workspace root using the source path and the fully-qualified class name. Example:
+
+```bash
+# From workspace root
+javac src/com/example/MyProgram.java
+java -cp "${workspaceFolder}" com.example.MyProgram < input.txt > output.txt
+```
+
+The VS Code task above assumes files are in the default (unnamed) package. If you use packages, adjust the compile/run command to reference the correct path and fully-qualified class name.
+
+Updated task behavior
+- The workspace task `Compile and run Java (with input/output)` now detects a `package` declaration in the current file and runs the fully-qualified class name automatically. This lets you run `Basics/Basics.java` (package `Basics`) without editing the task.
+
 ---
 If you'd like, I can: (a) create topic folders and add starter templates, (b) add a weekly checklist file, or (c) generate a prioritized problem list from Take U Forward — tell me which next.

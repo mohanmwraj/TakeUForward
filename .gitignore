@@ -1,0 +1,5 @@
+.vscode/
+*.class
+
+input.txt
+output.txt
