@@ -1,3 +1,5 @@
+package StacksAndQueues;
+
 
 class ArrayQueue {
     private int[] arr;

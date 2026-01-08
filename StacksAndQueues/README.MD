@@ -153,6 +153,12 @@ System.out.println(pq.poll()); // Output: 10 (smallest first)
 
 ## Common Problems
 
+### Problems
+
+- [Implement Stack Using Arrays](./Implement%20Stack%20Using%20Arrays/)
+- [Implement Queue Using Arrays](./Implement%20Queue%20Using%20Arrays/)
+
+
 ### Stack Problems
 - Valid Parentheses
 - Next Greater Element
