@@ -155,7 +155,7 @@ System.out.println(pq.poll()); // Output: 10 (smallest first)
 
 ### Problems
 
-- [Implement Stack Using Arrays](./Implement%20Stack%20Using%20Arrays/)
+- [Implement Stack Using Arrays](./Implement_Stack_Using_Arrays.java)
 - [Implement Queue Using Arrays](./Implement%20Queue%20Using%20Arrays/)
 
 
