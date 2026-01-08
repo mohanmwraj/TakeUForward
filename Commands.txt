@@ -1,0 +1,452 @@
+================================================================================
+                              UNIX/SHELL COMMANDS
+================================================================================
+
+//Print current working directory
+pwd
+
+//List files and directories in current directory
+ls
+
+//List all files including hidden files with detailed info (permissions, size, date)
+ls -la
+
+//List contents of a specific directory
+ls StacksAndQueues/
+
+//Change directory to home
+cd ~
+
+//Change directory to specific path
+cd "/Users/mora/Documents/TakeUForward"
+
+//Display contents of a file
+cat .gitignore
+
+//Create a new directory
+mkdir folder_name
+
+//Create nested directories
+mkdir -p parent/child/grandchild
+
+//Remove a file
+rm filename
+
+//Remove a directory and its contents recursively
+rm -rf folder_name
+
+//Copy a file
+cp source.txt destination.txt
+
+//Copy a directory recursively
+cp -r source_folder destination_folder
+
+//Move or rename a file/directory
+mv old_name new_name
+
+//Find files by name
+find . -name "*.java"
+
+//Search for text pattern in files
+grep -r "pattern" .
+
+//Display first n lines of a file
+head -n 10 filename
+
+//Display last n lines of a file
+tail -n 10 filename
+
+//Count lines, words, characters in a file
+wc -l filename
+
+//Change file permissions
+chmod 755 script.sh
+
+//Clear terminal screen
+clear
+
+
+================================================================================
+                                GIT COMMANDS
+================================================================================
+
+----- CONFIGURATION -----
+
+//Set global username
+git config --global user.name "Your Name"
+
+//Set global email
+git config --global user.email "your.email@example.com"
+
+//View all configurations
+git config --list
+
+//Set default branch name to main
+git config --global init.defaultBranch main
+
+
+----- REPOSITORY SETUP -----
+
+//Initialize a new git repository
+git init
+
+//Clone a remote repository
+git clone https://github.com/username/repo.git
+
+//Clone into a specific folder
+git clone https://github.com/username/repo.git folder_name
+
+
+----- STAGING & COMMITTING -----
+
+//Check repository status with all untracked files
+git status -uall
+
+//Check short status
+git status -s
+
+//Stage a specific file
+git add filename.java
+
+//Stage all changes in current directory
+git add .
+
+//Stage all changes including deletions
+git add -A
+
+//Force add ignored files
+git add -f StacksAndQueues/*.java
+
+//Stage files with verbose output
+git add "StacksAndQueues/" --verbose
+
+//Unstage a file
+git restore --staged filename
+
+//Discard changes in working directory
+git restore filename
+
+//Commit staged changes with message
+git commit -m "Your commit message"
+
+//Stage and commit all tracked files in one command
+git commit -am "Your commit message"
+
+//Amend the last commit message
+git commit --amend -m "New commit message"
+
+//Amend last commit without changing message
+git commit --amend --no-edit
+
+
+----- BRANCHING -----
+
+//List all local branches
+git branch
+
+//List all branches including remote
+git branch -a
+
+//List branches with last commit info
+git branch -v
+
+//Create a new branch
+git branch new-branch-name
+
+//Create and switch to new branch
+git checkout -b new-branch-name
+
+//Create and switch to new branch (newer syntax)
+git switch -c new-branch-name
+
+//Switch to an existing branch
+git checkout branch-name
+
+//Switch to an existing branch (newer syntax)
+git switch branch-name
+
+//Rename current branch
+git branch -m new-name
+
+//Rename a specific branch
+git branch -m old-name new-name
+
+//Delete a local branch (safe - prevents deleting unmerged)
+git branch -d branch-name
+
+//Force delete a local branch
+git branch -D branch-name
+
+//Delete a remote branch
+git push origin --delete branch-name
+
+
+----- MERGING & REBASING -----
+
+//Merge a branch into current branch
+git merge branch-name
+
+//Merge with no fast-forward (creates merge commit)
+git merge --no-ff branch-name
+
+//Abort a merge in progress
+git merge --abort
+
+//Rebase current branch onto another
+git rebase branch-name
+
+//Interactive rebase for last n commits
+git rebase -i HEAD~n
+
+//Abort a rebase in progress
+git rebase --abort
+
+//Continue rebase after resolving conflicts
+git rebase --continue
+
+
+----- REMOTE OPERATIONS -----
+
+//List remote repositories
+git remote -v
+
+//Add a remote repository
+git remote add origin https://github.com/username/repo.git
+
+//Remove a remote
+git remote remove origin
+
+//Rename a remote
+git remote rename old-name new-name
+
+//Fetch changes from remote without merging
+git fetch origin
+
+//Fetch all remotes
+git fetch --all
+
+//Pull changes from remote (fetch + merge)
+git pull origin main
+
+//Pull with rebase instead of merge
+git pull --rebase origin main
+
+//Push changes to remote
+git push origin main
+
+//Push and set upstream branch
+git push -u origin branch-name
+
+//Force push (use with caution!)
+git push --force
+
+//Push all branches
+git push --all origin
+
+//Push tags to remote
+git push origin --tags
+
+
+----- HISTORY & LOGS -----
+
+//View commit history
+git log
+
+//View commit history in one line format
+git log --oneline
+
+//View commit history with graph
+git log --oneline --graph --all
+
+//View last n commits
+git log -n 5
+
+//View commits by author
+git log --author="name"
+
+//View file change history
+git log --follow filename
+
+//Show details of a specific commit
+git show commit-hash
+
+//Show who changed each line of a file
+git blame filename
+
+
+----- DIFF & COMPARISON -----
+
+//Show unstaged changes
+git diff
+
+//Show staged changes
+git diff --staged
+
+//Show changes between two commits
+git diff commit1 commit2
+
+//Show staged changes with rename detection
+git diff --staged --name-status -M
+
+//Compare branches
+git diff branch1..branch2
+
+
+----- STASHING -----
+
+//Stash current changes
+git stash
+
+//Stash with a message
+git stash save "work in progress"
+
+//List all stashes
+git stash list
+
+//Apply most recent stash
+git stash apply
+
+//Apply and remove most recent stash
+git stash pop
+
+//Apply a specific stash
+git stash apply stash@{n}
+
+//Drop a specific stash
+git stash drop stash@{n}
+
+//Clear all stashes
+git stash clear
+
+
+----- HEAD & RESET -----
+
+//View where HEAD is pointing
+git log --oneline -1
+
+//Move HEAD to a specific commit (keep changes staged)
+git reset --soft commit-hash
+
+//Move HEAD to a specific commit (keep changes unstaged)
+git reset --mixed commit-hash
+
+//Move HEAD to a specific commit (discard all changes - DANGEROUS)
+git reset --hard commit-hash
+
+//Undo last commit, keep changes staged
+git reset --soft HEAD~1
+
+//Undo last commit, keep changes unstaged
+git reset HEAD~1
+
+//Undo last commit, discard changes
+git reset --hard HEAD~1
+
+//Create a new commit that undoes a previous commit
+git revert commit-hash
+
+
+----- CHECKOUT & RESTORE -----
+
+//Checkout a specific commit (detached HEAD)
+git checkout commit-hash
+
+//Checkout a specific file from another branch
+git checkout branch-name -- filename
+
+//Restore a file to last committed state
+git restore filename
+
+//Restore all files to last committed state
+git restore .
+
+
+----- TAGS -----
+
+//List all tags
+git tag
+
+//Create a lightweight tag
+git tag v1.0.0
+
+//Create an annotated tag
+git tag -a v1.0.0 -m "Version 1.0.0"
+
+//Tag a specific commit
+git tag -a v1.0.0 commit-hash -m "Version 1.0.0"
+
+//Delete a local tag
+git tag -d v1.0.0
+
+//Delete a remote tag
+git push origin --delete v1.0.0
+
+
+----- FILE TRACKING -----
+
+//List all tracked files
+git ls-files
+
+//List untracked files
+git ls-files -o
+
+//List untracked directories
+git ls-files -o --directory
+
+//Search tracked files
+git ls-files | grep -i pattern
+
+//Check which gitignore rule ignores a file
+git check-ignore -v filename
+
+//Stop tracking a file but keep it locally
+git rm --cached filename
+
+//Remove file from repo and filesystem
+git rm filename
+
+
+----- CLEANING -----
+
+//Show what would be deleted
+git clean -n
+
+//Delete untracked files
+git clean -f
+
+//Delete untracked files and directories
+git clean -fd
+
+//Delete untracked and ignored files
+git clean -fdx
+
+
+----- CHERRY-PICK -----
+
+//Apply a specific commit to current branch
+git cherry-pick commit-hash
+
+//Cherry-pick without committing
+git cherry-pick --no-commit commit-hash
+
+//Abort cherry-pick in progress
+git cherry-pick --abort
+
+
+================================================================================
+                            COMBINED COMMANDS
+================================================================================
+
+//Add all and show status
+git add -A && git status
+
+//Change to home, then to project directory, and list files
+cd ~ && cd "/Users/mora/Documents/TakeUForward" && ls -la
+
+//List directory contents and add to git with verbose output
+ls -la StacksAndQueues/ && git add "StacksAndQueues/" --verbose
+
+
+
+
+
