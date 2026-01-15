@@ -1,4 +1,4 @@
-package StacksAndQueues;
+package StacksAndQueues.implementation;
 
 
 class ArrayQueue {

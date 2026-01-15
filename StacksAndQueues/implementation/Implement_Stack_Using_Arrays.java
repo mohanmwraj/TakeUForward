@@ -1,4 +1,4 @@
-package StacksAndQueues;
+package StacksAndQueues.implementation;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +39,7 @@ class ArrayStack{
 }
 
 
-public class Implement_Stack_Using_Array {
+public class Implement_Stack_Using_Arrays {
     public static void main(String[] args) {
         List<String> commands = Arrays.asList(
             "ArrayStack",
