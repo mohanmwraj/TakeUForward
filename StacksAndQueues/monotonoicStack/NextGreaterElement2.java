@@ -97,7 +97,6 @@ class Solution{
 
 public class NextGreaterElement2 {
     public static void main(String[] args) {
-        int n = 4;
         int[] arr = {4,5,2,10,8};
 
         Solution sol = new Solution();

@@ -102,7 +102,7 @@ class LargestRectangleInaHistogramHelper2{
         Space Complexity: O(N)
     */
 
-    public int largestRectangleArea1(int[] heights)){
+    public int largestRectangleArea1(int[] heights){
 
         int n = heights.length;
         Stack<Integer> stack = new Stack<>();
