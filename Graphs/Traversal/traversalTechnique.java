@@ -115,3 +115,14 @@ public class traversalTechnique {
         }
     }
 }
+
+/*
+    Time Complexity:
+    - Both BFS and DFS have a time complexity of O(V + E), where V is the number of vertices and E is the number of edges in the graph. 
+      This is because we visit each vertex and edge at most once.
+
+    Space Complexity:
+    - The space complexity for both BFS and DFS is O(V) in the worst case, due to the visited array and the queue (for BFS) or recursion stack (for DFS). 
+      In the case of a very deep graph, the recursion stack for DFS can also contribute to space complexity.
+
+*/
